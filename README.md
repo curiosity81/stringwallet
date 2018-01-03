@@ -23,7 +23,11 @@ Having private keys in a wallet saved on some device is quite complex: Firstly, 
 A good stringwallet has the advantage, that only the first and second point are complex. A stringwallet needs no specific hardware. In the best case, the seed can be remembered. However, memorable seeds are weak and might be robbed quickly. In the case, where the seed is hard to remember, the seed can be written down on a sheet of paper. Backups can easily be created by writing down the seed on several different sheets of paper. The sheets of paper can be hidden. Moreover, the sheets can be cut into two or more pieces, which can be stored at different places so that it is unlikly that an attacker has access to the full seed. Other versions of "two factor authentication" are possible.
 
 ## Methods
-There are roughly 2^256 Bitcoin private keys. Sampling words without replacement from a dictionary can generate more different lists of words than there exist Bitcoin private keys. For instance, 16 words sampled from a dictionary containing 100.000 words results in 100.000\*99.999\*...\*99.985 = 2^265.75 possible word lists. Assuming that hashing distributes these strings evenly between 0 and 2^256, security should be high enough. Especially, since there exist only 2^160 Bitcoin addresses such that ~2^96 private keys map to the same address.
+### Seeds from string
+There are roughly 2^256 Bitcoin private keys. Sampling 40 characters with replacement from the set of printable characters on a standard keyboard would result in ~100^40 = 2^265.754 possible strings. Assuming that hashing distributes these strings evenly between 0 and 2^256, security should be high enough. Especially, since there exist only 2^160 Bitcoin addresses such that ~2^96 private keys map to the same address.
+
+### Seeds from word list
+Also sampling words without replacement from a dictionary can generate more different lists of words than there exist Bitcoin private keys. For instance, 16 words sampled from a dictionary containing 100.000 words results in 100.000\*99.999\*...\*99.985 = 2^265.753 possible word lists.
 
 ## Files
 - base58.sh \<hex string\>:
@@ -85,7 +89,7 @@ passphrase seems to be correct
 ERROR: passphrase is wrong!
 ```
 
-### Working with seed string
+### Working with seed strings
 ```
 ./makepriv.sh "Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers" 100
 6BE5D473A71D98FDFDE0E06ABA4DB323CF6992583FF8F12DA5B3B2DF67C8A102
