@@ -24,10 +24,13 @@ A good string wallet has the advantage, that only the first and second point are
 
 ## Methods
 ### Seeds from string
-There are roughly 2^256 Bitcoin private keys. Sampling 40 characters with replacement from the set of printable characters on a standard keyboard would result in ~100^40 = 2^265.754 possible strings. Assuming that hashing distributes these strings evenly between 0 and 2^256, security should be high enough. Especially, since there exist only 2^160 Bitcoin addresses such that ~2^96 private keys map to the same address.
+There are roughly 2^256 Bitcoin private keys. Sampling 40 characters with replacement from the set of printable characters on a standard keyboard results in ~100^40 = 2^265.754 possible strings. Assuming that hashing distributes these strings evenly between 0 and 2^256, security should be high enough. Especially, since there exist only 2^160 Bitcoin addresses such that ~2^96 private keys map to the same address.
 
 ### Seeds from word list
 Also sampling words without replacement from a dictionary can generate more different lists of words than there exist Bitcoin private keys. For instance, 16 words sampled from a dictionary containing 100.000 words results in 100.000\*99.999\*...\*99.985 = 2^265.753 possible word lists.
+
+### Hashing
+Hashing the seed many times, so that the computation of the key pair slows down noticeably further increases the complexity of a brute force attack.
 
 ## Files
 - base58.sh \<hex string\>:
