@@ -43,7 +43,7 @@ There are roughly 2^256 Bitcoin private keys. Sampling words without replacement
 - test.sh \<file\>:
   Returns funds of addresses generated from strings using blockchain.info. Each line represents a string.
 - makelib.sh:
-  Creates random list of 1000 words from some dictionary and removes german umlauts. Adapt it correspondingly. Intended to create lists of words, which can be printed out. From this list, 16 to 20 or even more words can be selected to represent a new passphrase string for a stringwallet.
+  Creates random list of 1000 words from some dictionary and removes german umlauts. Adapt it correspondingly. Intended to create lists of words, which can be printed out. From this list, 16 to 20 or even more words can be selected to represent a new passphrase string for a string wallet.
 - makepassphrase.sh \<number of iterations\> \<number of words\>:
   Creates \<number of words\> words and the corresponding keys via \<number of iterations\> hashing rounds. The last four words are used as checksum. Checksum is not necessary for deriving the private key. See examples below.  
 - testpassphrase.sh \<number of iterations\> \<passphrase\>:
