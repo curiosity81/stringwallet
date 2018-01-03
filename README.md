@@ -23,6 +23,8 @@ Having private keys in a wallet saved on some device is quite complex: Firstly, 
 A good string wallet has the advantage, that only the first and second point are complex. A string wallet needs no specific hardware. In the best case, the seed can be remembered. However, memorable seeds are weak and might be robbed quickly. In the case, where the seed is hard to remember, the seed can be written down on a sheet of paper. Backups can easily be created by writing down the seed on several different sheets of paper. The sheets of paper can be hidden. Moreover, the sheets can be cut into two or more pieces, which can be stored at different places so that it is unlikly that an attacker has access to the full seed. Other versions of "two factor authentication" are possible.
 
 ## Methods
+Assuming that the random generator works perfectly:
+
 ### Seeds from string
 There are roughly 2^256 Bitcoin private keys. Sampling 40 characters with replacement from the set of printable characters on a standard keyboard results in ~100^40 = 2^265.754 possible strings. Assuming that hashing distributes these strings evenly between 0 and 2^256, security should be high enough. Especially, since there exist only 2^160 Bitcoin addresses such that ~2^96 private keys map to the same address.
 
