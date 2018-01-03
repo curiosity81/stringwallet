@@ -54,7 +54,7 @@ There are roughly 2^256 Bitcoin private keys. Sampling words without replacement
 - Add the possibility to generate a bunch of address from one seed.
 
 ## Examples:
-### Good passphrase
+### Creating seed string + checksum
 ```
 ./makepassphrase.sh 100 16
 passphrase:   
@@ -85,7 +85,7 @@ passphrase seems to be correct
 ERROR: passphrase is wrong!
 ```
 
-### Good passphrase
+### Working with seed string
 ```
 ./makepriv.sh "Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers" 100
 6BE5D473A71D98FDFDE0E06ABA4DB323CF6992583FF8F12DA5B3B2DF67C8A102
