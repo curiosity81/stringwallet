@@ -1,4 +1,4 @@
-# Stringwallet
+# stringwallet
 Collection of scripts for creating string wallets. Code is not optimized for speed.
 
 ## WARNINGS
