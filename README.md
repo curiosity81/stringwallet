@@ -66,46 +66,50 @@ Hashing the seed many times, so that the computation of the key pair slows down 
 ### Creating seed string + checksum
 ```
 ./makepassphrase.sh 100 16
-passphrase:   
-  Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers;westernizing;stanchion;griper;Nubian's
+passphrase:
+   Edda;nonmagnetic;fins;cleaved;suffix;Paganini's;peddlers;hut;Creation;disheveling;novelizes;contemptible;snitched;boyfriends;barnacled;Nahuatls
+checksum:
+   1BF7
 private key:
-   6BE5D473A71D98FDFDE0E06ABA4DB323CF6992583FF8F12DA5B3B2DF67C8A102
+   01C9B6EBE004D09A7738E3FFBC08243CDBBE3ADB38E9E7BBDFEA41F5E52A2655
 public key:
-   04763851BE043B7FBA8855C1CB947DD3E0CC869A8FD63C33FAA3C37BDFDB0E6B3CF530C62C4BD9AA3A4F75929C1F602D68DF0092DF944A3D924FCCAC6FE22A245D
+   041D1D584B40A8A7D526CC9A6CD6561EFD3518766C9B6B77BD04018BDC50A484EF0B391FE89D37F6B57F0E86337DA0FF097D4279A9B93995F8B941F68DCC3F3ED8
 address:
-   1BLeXrujA5QW8wFnC1D8FddnGxQzTUPJNc
-number of possible choices
-   2^271.12188820084398622673
+   1FXXPUteTEAKpRaYw22hV58ADq6JBcdsXo
+size of universe:
+   126187
+number of possible choices:
+   choose(126187, 16) = 2^271.12188820084398622673
 ```
 
 ```
-./testpassphrase.sh 100 "Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers;westernizing;stanchion;griper;Nubian's"
+./testpassphrase.sh 100 "Edda;nonmagnetic;fins;cleaved;suffix;Paganini's;peddlers;hut;Creation;disheveling;novelizes;contemptible;snitched;boyfriends;barnacled;Nahuatls" "1BF7"
 passphrase seems to be correct
    private key:
-      6BE5D473A71D98FDFDE0E06ABA4DB323CF6992583FF8F12DA5B3B2DF67C8A102
+      01C9B6EBE004D09A7738E3FFBC08243CDBBE3ADB38E9E7BBDFEA41F5E52A2655
    public key:
-      04763851BE043B7FBA8855C1CB947DD3E0CC869A8FD63C33FAA3C37BDFDB0E6B3CF530C62C4BD9AA3A4F75929C1F602D68DF0092DF944A3D924FCCAC6FE22A245D
+      041D1D584B40A8A7D526CC9A6CD6561EFD3518766C9B6B77BD04018BDC50A484EF0B391FE89D37F6B57F0E86337DA0FF097D4279A9B93995F8B941F68DCC3F3ED8
    address:
-      1BLeXrujA5QW8wFnC1D8FddnGxQzTUPJNc
+      1FXXPUteTEAKpRaYw22hV58ADq6JBcdsXo
 ```
 
 ```
-./testpassphrase.sh 100 "Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codexs;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers;westernizing;stanchion;griper;Nubian's"
+./testpassphrase.sh 100 "Edda;nonmagnetic;fins;cleaved;suffix;Paganini's;peddlers;hut;Creation;disheviling;novelizes;contemptible;snitched;boyfriends;barnacled;Nahuatls" "1BF7"
 ERROR: passphrase is wrong!
 ```
 
 ### Working with seed strings
 ```
-./makepriv.sh "Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers" 100
-6BE5D473A71D98FDFDE0E06ABA4DB323CF6992583FF8F12DA5B3B2DF67C8A102
+./makepriv.sh "Edda;nonmagnetic;fins;cleaved;suffix;Paganini's;peddlers;hut;Creation;disheveling;novelizes;contemptible;snitched;boyfriends;barnacled;Nahuatls" 100
+01C9B6EBE004D09A7738E3FFBC08243CDBBE3ADB38E9E7BBDFEA41F5E52A2655
 ```
 
 ```
-./string2addr.sh "Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers" 100
-1BLeXrujA5QW8wFnC1D8FddnGxQzTUPJNc
+./string2addr.sh "Edda;nonmagnetic;fins;cleaved;suffix;Paganini's;peddlers;hut;Creation;disheveling;novelizes;contemptible;snitched;boyfriends;barnacled;Nahuatls" 100
+1FXXPUteTEAKpRaYw22hV58ADq6JBcdsXo
 ```
 
 ```
-./testonce.sh "Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers" 100
-Nubian's;Fairbanks;plaza's;economy;westernizing;walkaways;commerce;codex's;balefully;horseman;stanchion;portability's;immaculate;griper;crowdfunded;flippers	1BLeXrujA5QW8wFnC1D8FddnGxQzTUPJNc	100	0	0
+./testonce.sh "Edda;nonmagnetic;fins;cleaved;suffix;Paganini's;peddlers;hut;Creation;disheveling;novelizes;contemptible;snitched;boyfriends;barnacled;Nahuatls" 100
+Edda;nonmagnetic;fins;cleaved;suffix;Paganini's;peddlers;hut;Creation;disheveling;novelizes;contemptible;snitched;boyfriends;barnacled;Nahuatls	1FXXPUteTEAKpRaYw22hV58ADq6JBcdsXo	100	0	0
 ```
