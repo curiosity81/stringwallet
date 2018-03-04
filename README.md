@@ -79,7 +79,7 @@ address:
 size of universe:
    126187
 number of possible choices:
-   choose(126187, 16) = 2^271.12188820084398622673
+   2^271.12188820084398622673
 ```
 
 ```

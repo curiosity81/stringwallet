@@ -40,4 +40,4 @@ echo "   $address";
 echo "size of universe:";
 echo "   $size_of_universe";
 echo "number of possible choices:";
-echo "   choose($size_of_universe, $number_of_words) = 2^$number_of_choices";
+echo "   2^$number_of_choices";
